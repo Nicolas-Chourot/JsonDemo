@@ -1,0 +1,29 @@
+﻿
+@model JsonDemo.Models.Course
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="CourseListLayout">
+    <h4>@Model.Code @Model.Title</h4>
+    @Helper.IconCmd("Courses", "Edit/" + Model.Id, "fa-edit", "Modifier...")
+    @Helper.IconConfirmCmd("Courses", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer " + Model.Code + "?")
+</div>
+<hr />
+
+<div>
+    <h4>Inscriptions</h4>
+    @foreach (var student in Model.Students)
+    {
+        <div>
+            @student.Code
+            @student.LastName
+            @student.FirstName
+        </div>
+    }
+</div>
+<br />
+<p>
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>
