@@ -6,7 +6,7 @@ using System.Linq;
 namespace JsonDemo.Models
 {
     public class Course
-    {
+    { //
         public int Id { get; set; }
         [Display(Name = "Sigle"), Required(ErrorMessage = "Obligatoire")]
         public string Code { get; set; }
